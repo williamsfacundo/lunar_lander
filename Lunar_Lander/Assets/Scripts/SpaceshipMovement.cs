@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class SpaceshipMovement : MonoBehaviour
 {
-    [SerializeField] private float horizontalSpeed = 80;
-    [SerializeField] private float verticalSpeed = 5;
+    [SerializeField] private Vector2 horizontalSpeed = new Vector3(4f, 0f);
+    [SerializeField] private Vector2 verticalSpeed = new Vector3(0f, -4f);
 
     private Rigidbody2D rigidBody2D;
 
     private const float moonGravity = 1.625f;
 
-    private Vector2 twoDimensionsPosition;
-    private Vector2 twoDimensionsMoveValue;
+    private Vector2 twoDimensionsPosition = new Vector2();    
 
     private void Awake()
     {
@@ -27,9 +26,9 @@ public class SpaceshipMovement : MonoBehaviour
 
     private void MoveSpaceship()
     {
-        twoDimensionsPosition = new Vector2(transform.position.x, transform.position.y);        
-        twoDimensionsMoveValue = new Vector2(horizontalSpeed * Time.deltaTime, -verticalSpeed * Time.deltaTime * moonGravity);
+        twoDimensionsPosition.x = transform.position.x; 
+        twoDimensionsPosition.y = transform.position.y;       
         
-        rigidBody2D.MovePosition(twoDimensionsPosition + twoDimensionsMoveValue);
+        rigidBody2D.MovePosition(twoDimensionsPosition + (horizontalSpeed + (verticalSpeed * moonGravity)) * Time.deltaTime);        
     }    
 }
