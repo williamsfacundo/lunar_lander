@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 250878289}
   - component: {fileID: 250878288}
   - component: {fileID: 250878290}
+  - component: {fileID: 250878291}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Player
@@ -170,8 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe511cabc90ba24d94cd76c3c36cffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: {x: 4, y: 0}
-  verticalSpeed: {x: 0, y: -4}
+  horizontalSpeed: {x: 0, y: 0}
+  verticalSpeed: {x: 0, y: 0}
 --- !u!50 &250878289
 Rigidbody2D:
   serializedVersion: 4
@@ -207,6 +208,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateRightKey: 275
   rotateLeftKey: 276
+--- !u!114 &250878291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250878286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda72596c9eb6104ba331e9e51b45e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useEngineKey: 273
+  spaceshipMovement: {fileID: 250878288}
+  engineForce: {x: 0.05, y: 0.05}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
