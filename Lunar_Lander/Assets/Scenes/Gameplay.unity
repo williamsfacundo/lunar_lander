@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccb96e6c607d7740bbe62cb9dcbf3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceshipRotationValue: 90
+  spaceshipRotationValue: 5
 --- !u!54 &598950378
 Rigidbody:
   m_ObjectHideFlags: 0
