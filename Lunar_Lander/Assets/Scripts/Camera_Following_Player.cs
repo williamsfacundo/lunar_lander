@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Camera_Following_Player : MonoBehaviour
@@ -23,5 +21,5 @@ public class Camera_Following_Player : MonoBehaviour
     private void CameraUpdatePosition() 
     {
         transform.position = spaceship.transform.position - camera_offset;
-    }
+    }   
 }

@@ -48,7 +48,7 @@ public class SpaceshipMovement : MonoBehaviour
         }
         else if(!colliding) 
         {
-            rb.velocity = -transform.up * gravity * Time.deltaTime;
+            rb.AddForce(-transform.up * gravity * Time.deltaTime);
         }
     }
 
