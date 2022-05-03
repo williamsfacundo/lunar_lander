@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class SpaceshipMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;    
-    
-    private Rigidbody rb;      
+    [SerializeField] private float speed; 
+    [SerializeField] private float gravity = 16f;
+
+    private Rigidbody rb;
+
+    private bool colliding;    
     
     private void Awake()
     {
@@ -21,12 +24,32 @@ public class SpaceshipMovement : MonoBehaviour
         MoveSpaceship();        
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!colliding)
+        { 
+            colliding = true; 
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (colliding)
+        {
+            colliding = false;
+        }
+    }
+
     private void MoveSpaceship()
     {
         if (Input.GetKey(KeyCode.Space)) 
         {
             rb.AddForce(transform.up * speed * Time.deltaTime, ForceMode.Impulse);
-        }        
+        }
+        else if(!colliding) 
+        {
+            rb.velocity = -transform.up * gravity * Time.deltaTime;
+        }
     }
 
     private void ChangeRigidBodyIfIsKinematic() 
