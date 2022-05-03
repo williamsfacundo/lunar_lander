@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Player_Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,11 +200,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0.070746906, y: 0.00807656, z: -0.0005728884, w: -0.99746144}
-  m_LocalPosition: {x: -0.08024993, y: 3.1468318, z: -12.414875}
+  m_LocalPosition: {x: -0.2079112, y: 1.3057175, z: -4.532273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 598950379}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &598950376
 GameObject:
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccb96e6c607d7740bbe62cb9dcbf3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceshipRotationValue: 15
+  spaceshipRotationValue: 10
 --- !u!54 &598950378
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -263,13 +263,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598950376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 1.2505044, y: 1.63, z: -0.2960601}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1526492136}
   - {fileID: 1452154733}
+  - {fileID: 519420032}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &598950380
 MonoBehaviour:
@@ -283,8 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe511cabc90ba24d94cd76c3c36cffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 0, y: 0, z: 0}
-  velocity: {x: 0, y: -1.1, z: 0}
+  speed: 10
 --- !u!114 &598950381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,12 +294,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 598950376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cda72596c9eb6104ba331e9e51b45e8f, type: 3}
+  m_Script: {fileID: 11500000, guid: ff74f5cb12a73bb408671b901c8c47d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useEngineKey: 32
   spaceshipMovement: {fileID: 598950380}
-  engineForce: 10
 --- !u!1 &862986011
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +372,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1432679706
 GameObject:
@@ -462,13 +460,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432679706}
-  m_LocalRotation: {x: 0.7121554, y: -0.17485555, z: 0.19082141, w: 0.6525699}
-  m_LocalPosition: {x: 0.31109977, y: 4.289453, z: -2.914568}
+  m_LocalRotation: {x: 0.54677016, y: -0.17850593, z: 0.017629966, w: 0.8178431}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 95, y: -30, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 115.757996, y: 141.133, z: 157.491}
 --- !u!1 &1452154732
 GameObject:
   m_ObjectHideFlags: 0
