@@ -740,6 +740,9 @@ GameObject:
   - component: {fileID: 2807853048245267885}
   - component: {fileID: 4785993618566677218}
   - component: {fileID: -2699075196568774582}
+  - component: {fileID: -1527935762257102565}
+  - component: {fileID: 2413302704033620846}
+  - component: {fileID: 2413302704033620847}
   m_Layer: 0
   m_Name: Nave_ref
   m_TagString: Untagged
@@ -802,6 +805,49 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.14394693, z: 0.12989959}
   m_Center: {x: 0.080000006, y: 0.44559392, z: -0.004493813}
+--- !u!54 &-1527935762257102565
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3295702352808933143}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 56
+  m_CollisionDetection: 0
+--- !u!114 &2413302704033620846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3295702352808933143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe511cabc90ba24d94cd76c3c36cffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  gravity: 1.6
+--- !u!114 &2413302704033620847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3295702352808933143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccb96e6c607d7740bbe62cb9dcbf3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceshipRotationValue: 30
 --- !u!1 &4154742441103906486
 GameObject:
   m_ObjectHideFlags: 0
