@@ -5,56 +5,39 @@ using UnityEngine;
 public class SpaceshipMovement : MonoBehaviour
 {
     [SerializeField] private float speed; 
-    [SerializeField] private float gravity = 16f;
+    [SerializeField] private float yGravity = -1.6f;
 
-    private Rigidbody rb;
-
-    private bool colliding;    
+    private Rigidbody rb;      
     
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();        
     }
-    
+
+    private void Start()
+    {
+        Physics.gravity = new Vector3(0f, yGravity, 0f);
+    }
+
     // Update is called once per frame
     private void FixedUpdate()
     {
         ChangeRigidBodyIfIsKinematic();
 
         MoveSpaceship();        
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (!colliding)
-        { 
-            colliding = true; 
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (colliding)
-        {
-            colliding = false;
-        }
-    }
+    }    
 
     private void MoveSpaceship()
     {
         if (Input.GetKey(KeyCode.Space)) 
         {
-            rb.AddForce(transform.up * speed * Time.deltaTime, ForceMode.Impulse);
-        }
-        else if(!colliding) 
-        {
-            rb.AddForce(-transform.up * gravity * Time.deltaTime);
-        }
+            rb.AddForce(transform.up * speed * Time.deltaTime, ForceMode.Acceleration);
+        }        
     }
 
     private void ChangeRigidBodyIfIsKinematic() 
     {
-        if(rb.isKinematic) 
+        if (rb.isKinematic) 
         {
             rb.isKinematic = false;
         }

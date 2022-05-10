@@ -9,7 +9,7 @@ public class Camera_Following_Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CameraUpdatePosition();               
+        CameraUpdatePosition();       
     }
 
     // Update is called once per frame
