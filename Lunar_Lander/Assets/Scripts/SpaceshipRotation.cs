@@ -1,5 +1,3 @@
-    using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -26,8 +24,7 @@ public class SpaceshipRotation : MonoBehaviour
     }
 
     void RotateSpaceship() 
-    {
-        rotation.x = Input.GetAxisRaw("Vertical") * Time.deltaTime * spaceshipRotationValue;
+    {        
         rotation.z = Input.GetAxisRaw("Horizontal") * Time.deltaTime * spaceshipRotationValue;
 
         rb.AddTorque(rotation);
