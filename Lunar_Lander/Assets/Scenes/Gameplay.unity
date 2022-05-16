@@ -839,6 +839,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3295702352808933143, guid: d6dec625b214a774fab32ee1fbe54ad5, type: 3}
   m_PrefabInstance: {fileID: 2413302704033620844}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2413302704033620848 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2413302704033620846, guid: d6dec625b214a774fab32ee1fbe54ad5, type: 3}
+  m_PrefabInstance: {fileID: 2413302704033620844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2413302704033620845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe511cabc90ba24d94cd76c3c36cffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2413302704033620853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2413302704033620845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75dfa2adaa1a6fa42ac38860200fc7d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceshipMovement: {fileID: 2413302704033620848}
+  angleToResetPosition: 80
 --- !u!1001 &7889350025086107552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -897,6 +922,10 @@ PrefabInstance:
     - target: {fileID: 7889350023586016126, guid: eb0d1b559a249724cb0c6c8acbf4ef90, type: 3}
       propertyPath: m_Name
       value: Initial_Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7889350023586016126, guid: eb0d1b559a249724cb0c6c8acbf4ef90, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb0d1b559a249724cb0c6c8acbf4ef90, type: 3}

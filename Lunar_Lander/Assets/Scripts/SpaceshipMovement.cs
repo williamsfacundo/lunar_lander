@@ -7,8 +7,11 @@ public class SpaceshipMovement : MonoBehaviour
     [SerializeField] private float speed; 
     [SerializeField] private float yGravity = -1.6f;
 
-    private Rigidbody rb;      
-    
+    private Rigidbody rb;
+
+    private Vector3 initialPosition;
+    private Vector3 initialRotation;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();        
@@ -17,6 +20,9 @@ public class SpaceshipMovement : MonoBehaviour
     private void Start()
     {
         Physics.gravity = new Vector3(0f, yGravity, 0f);
+
+        initialPosition = gameObject.transform.position;
+        initialRotation = gameObject.transform.eulerAngles;
     }
 
     // Update is called once per frame
@@ -45,6 +51,15 @@ public class SpaceshipMovement : MonoBehaviour
 
     public void SetRigidIsKinematic(bool isKinematic) 
     {
-        rb.isKinematic = isKinematic;
+        rb.isKinematic = isKinematic;        
+    }
+
+    public void RestartGameObject() 
+    {
+        rb.isKinematic = true;
+        rb.isKinematic = false;
+
+        gameObject.transform.position = initialPosition;
+        gameObject.transform.eulerAngles = initialRotation;
     }
 }
