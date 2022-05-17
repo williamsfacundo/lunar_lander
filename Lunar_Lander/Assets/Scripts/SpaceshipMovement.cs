@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -6,11 +7,16 @@ public class SpaceshipMovement : MonoBehaviour
 {
     [SerializeField] private float speed; 
     [SerializeField] private float yGravity = -1.6f;
+    [SerializeField] private float initialFuel = 40f;
 
     private Rigidbody rb;
 
     private Vector3 initialPosition;
     private Vector3 initialRotation;
+
+    private float fuel;
+
+    private const float fuelConsumptionRate = 1f;
 
     private void Awake()
     {
@@ -30,15 +36,37 @@ public class SpaceshipMovement : MonoBehaviour
     {
         ChangeRigidBodyIfIsKinematic();
 
-        MoveSpaceship();        
-    }    
+        MoveSpaceship();
+
+        FuelConsume();
+    } 
+    
+    private void FuelConsume() 
+    {
+        if (fuel <= 0f) 
+        {
+            SceneManager.LoadScene("EndGame");                                    
+        }
+    }
 
     private void MoveSpaceship()
     {
         if (Input.GetKey(KeyCode.Space)) 
         {
             rb.AddForce(transform.up * speed * Time.deltaTime, ForceMode.Acceleration);
+
+            RestFuel();
         }        
+    }
+
+    private void RestFuel() 
+    {
+        fuel -= fuelConsumptionRate * Time.deltaTime;
+
+        if (fuel < 0)
+        {
+            fuel = 0f;
+        }
     }
 
     private void ChangeRigidBodyIfIsKinematic() 
