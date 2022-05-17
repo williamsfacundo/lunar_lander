@@ -361,8 +361,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Programmer : Williams Facundo\n\nArtists: \n\t- Spaceship: Lucas Qui\xF1ones\n\t-Skybox:
-    Lucas Qui\xF1ones\n"
+  m_Text: "Programmer : Williams Facundo\n\nArtists: \n\t- Spaceship: Lucas Qui\xF1ones\n\t\n"
 --- !u!222 &1256661654
 CanvasRenderer:
   m_ObjectHideFlags: 0
