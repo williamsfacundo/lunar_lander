@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 
 public class SpaceshipMovement : MonoBehaviour
 {
+    [SerializeField] private Text fuelText;
     [SerializeField] private float speed; 
     [SerializeField] private float yGravity = -1.6f;
     [SerializeField] private float initialFuel = 40f;
@@ -31,6 +33,11 @@ public class SpaceshipMovement : MonoBehaviour
         initialRotation = gameObject.transform.eulerAngles;
 
         fuel = initialFuel;
+    }
+
+    private void Update()
+    {
+        fuelText.text = "Fuel " + (short)fuel;
     }
 
     // Update is called once per frame
