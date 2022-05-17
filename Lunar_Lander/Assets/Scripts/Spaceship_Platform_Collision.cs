@@ -38,31 +38,35 @@ public class Spaceship_Platform_Collision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Initial_Platform")) 
+        InitialPlatformCollison(collision);
+
+        NormalPlatformCollision(collision);
+    }
+    
+
+    private void InitialPlatformCollison(Collision collision) 
+    {
+        if (collision.transform.CompareTag("Initial_Platform"))
         {
             SpaceshipFall();
         }
-        
-        if (collision.transform.CompareTag("Platform")) 
-        {
-            Debug.Log(collision.relativeVelocity.y);
-
-            if (collision.relativeVelocity.y >= maxCollisionVelocity) 
-            {
-                spaceshipMovement.RestartGameObject();                               
-            }
-            else 
-            {
-                if (Vector3.Angle(transform.up, Vector3.up) <= 5f) 
-                {
-                    score.ScoreUp(pointsPerLanding);
-                    spaceshipMovement.RestartGameObject();
-                }               
-            }            
-        }
-    } 
-
+    }
     
+    private void NormalPlatformCollision(Collision collision) 
+    {
+        if (collision.transform.CompareTag("Platform"))
+        {
+            if (collision.relativeVelocity.y < maxCollisionVelocity && Vector3.Angle(transform.up, Vector3.up) <= 5f)
+            {
+                score.ScoreUp(pointsPerLanding);
+                spaceshipMovement.RestartGameObject();                
+            }
+            else
+            {
+                spaceshipMovement.RestartGameObject();
+            }
+        }
+    }
 
     private void SpaceshipFall() 
     {
