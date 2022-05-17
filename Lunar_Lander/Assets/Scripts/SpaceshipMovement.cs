@@ -29,6 +29,8 @@ public class SpaceshipMovement : MonoBehaviour
 
         initialPosition = gameObject.transform.position;
         initialRotation = gameObject.transform.eulerAngles;
+
+        fuel = initialFuel;
     }
 
     // Update is called once per frame
@@ -38,10 +40,10 @@ public class SpaceshipMovement : MonoBehaviour
 
         MoveSpaceship();
 
-        FuelConsume();
+        ChangeSceneIfThereIsNoMoreFuel();
     } 
     
-    private void FuelConsume() 
+    private void ChangeSceneIfThereIsNoMoreFuel() 
     {
         if (fuel <= 0f) 
         {
