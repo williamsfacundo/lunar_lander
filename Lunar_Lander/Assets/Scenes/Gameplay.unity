@@ -1708,7 +1708,7 @@ MonoBehaviour:
   spaceshipMovement: {fileID: 2413302704033620848}
   score: {fileID: 2413302704033620854}
   angleToResetPosition: 80
-  maxCollisionVelocity: 2
+  maxCollisionVelocity: 2.2
 --- !u!114 &2413302704033620854
 MonoBehaviour:
   m_ObjectHideFlags: 0

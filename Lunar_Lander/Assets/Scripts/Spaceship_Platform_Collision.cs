@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spaceship_Platform_Collision : MonoBehaviour
@@ -13,7 +11,31 @@ public class Spaceship_Platform_Collision : MonoBehaviour
     [SerializeField] private float maxCollisionVelocity;
 
     private const int pointsPerLanding = 5;
-    
+
+    //private bool isCollidingWithPlatform;
+
+    //private float timerToAddPoint;
+    //private const float timeToAddPoint = 1f;
+
+    /*void Start() 
+    {
+        timerToAddPoint = timeToAddPoint;
+    }
+
+    void Update()
+    {
+        if (isCollidingWithPlatform) 
+        {
+            timerToAddPoint -= Time.deltaTime;
+        }
+
+        if (timerToAddPoint == 0f) 
+        {
+            score.ScoreUp(pointsPerLanding);
+            spaceshipMovement.RestartGameObject();
+        }
+    }*/
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Initial_Platform")) 
@@ -31,12 +53,16 @@ public class Spaceship_Platform_Collision : MonoBehaviour
             }
             else 
             {
-                score.ScoreUp(pointsPerLanding);
-            }
-
-            SpaceshipFall();
+                if (Vector3.Angle(transform.up, Vector3.up) <= 5f) 
+                {
+                    score.ScoreUp(pointsPerLanding);
+                    spaceshipMovement.RestartGameObject();
+                }               
+            }            
         }
-    }   
+    } 
+
+    
 
     private void SpaceshipFall() 
     {
