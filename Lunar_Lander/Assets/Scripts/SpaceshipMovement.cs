@@ -19,6 +19,7 @@ public class SpaceshipMovement : MonoBehaviour
     private float fuel;
 
     private const float fuelConsumptionRate = 1f;
+    private const float yLimit = -10f;
 
     private void Awake()
     {
@@ -48,6 +49,8 @@ public class SpaceshipMovement : MonoBehaviour
         MoveSpaceship();
 
         ChangeSceneIfThereIsNoMoreFuel();
+
+        PlayerYPositionPassLimit();
     } 
     
     private void ChangeSceneIfThereIsNoMoreFuel() 
@@ -55,6 +58,14 @@ public class SpaceshipMovement : MonoBehaviour
         if (fuel <= 0f) 
         {
             SceneManager.LoadScene("EndGame");                                    
+        }
+    }
+
+    private void PlayerYPositionPassLimit() 
+    {
+        if (transform.position.y <= yLimit) 
+        {
+            RestartGameObject();
         }
     }
 
