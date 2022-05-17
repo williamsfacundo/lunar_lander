@@ -6,18 +6,19 @@ public class Spaceship_Platform_Collision : MonoBehaviour
 {
     [SerializeField] private SpaceshipMovement spaceshipMovement;
 
+    [SerializeField] private Score score;
+
     [SerializeField] private float angleToResetPosition;
 
     [SerializeField] private float maxCollisionVelocity;
 
+    private const int pointsPerLanding = 5;
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Initial_Platform")) 
         {
-            if (Vector3.Angle(transform.up, Vector3.up) >= angleToResetPosition) //80f
-            {               
-                spaceshipMovement.RestartGameObject();
-            }
+            SpaceshipFall();
         }
         
         if (collision.transform.CompareTag("Platform")) 
@@ -26,8 +27,22 @@ public class Spaceship_Platform_Collision : MonoBehaviour
 
             if (collision.relativeVelocity.y >= maxCollisionVelocity) 
             {
-                spaceshipMovement.RestartGameObject();
-            }            
+                spaceshipMovement.RestartGameObject();                               
+            }
+            else 
+            {
+                score.ScoreUp(pointsPerLanding);
+            }
+
+            SpaceshipFall();
         }
     }   
+
+    private void SpaceshipFall() 
+    {
+        if (Vector3.Angle(transform.up, Vector3.up) >= angleToResetPosition) //80f
+        {
+            spaceshipMovement.RestartGameObject();
+        }
+    }
 }
