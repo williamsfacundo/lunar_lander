@@ -1015,6 +1015,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1390136996}
     - target: {fileID: 470069969, guid: 640d6da1244633144b13202da50f62e4, type: 3}
+      propertyPath: yOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 470069969, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: initial_platform
       value: 
       objectReference: {fileID: 1500091614}
@@ -1022,21 +1026,25 @@ PrefabInstance:
       propertyPath: fuelText
       value: 
       objectReference: {fileID: 1046341708}
+    - target: {fileID: 470069972, guid: 640d6da1244633144b13202da50f62e4, type: 3}
+      propertyPath: m_Constraints
+      value: 56
+      objectReference: {fileID: 0}
     - target: {fileID: 6121442731637236508, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6121442731637236508, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6121442731637236508, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6121442731637236508, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6121442731637236508, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: m_LocalPosition.x
