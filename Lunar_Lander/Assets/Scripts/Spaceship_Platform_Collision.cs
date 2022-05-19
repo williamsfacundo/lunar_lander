@@ -17,18 +17,8 @@ public class Spaceship_Platform_Collision : MonoBehaviour
     private float timerToAddPoint = 0f;       
 
     private void OnCollisionEnter(Collision collision)
-    {        
-        InitialPlatformCollison(collision);
-
-        NormalPlatformCollision(collision);
-    }
-
-    private void InitialPlatformCollison(Collision collision) 
     {
-        if (collision.transform.CompareTag("Initial_Platform"))
-        {
-            SpaceshipFall();
-        }
+        NormalPlatformCollision(collision);
     }
 
     private void NormalPlatformCollision(Collision collision)
@@ -48,14 +38,30 @@ public class Spaceship_Platform_Collision : MonoBehaviour
 
     private bool CorrectVelocity(Collision collision) 
     {
+        bool correctVelocity = true;
+
         if (collision.relativeVelocity.y > 0f) 
         {
-            return collision.relativeVelocity.y < maxCollisionVelocity;
+            correctVelocity = collision.relativeVelocity.y < maxCollisionVelocity;
         }
         else 
         {
             return collision.relativeVelocity.y > -maxCollisionVelocity;
+        }
+
+        if (correctVelocity) 
+        {
+            if (collision.relativeVelocity.x > 0f)
+            {
+                correctVelocity = collision.relativeVelocity.x < maxCollisionVelocity;
+            }
+            else
+            {
+                return collision.relativeVelocity.x > -maxCollisionVelocity;
+            }
         }        
+
+        return correctVelocity;
     }
     
     private void SpaceshipFall() 
@@ -68,6 +74,8 @@ public class Spaceship_Platform_Collision : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
+        SpaceshipFall();
+
         if (collision.transform.CompareTag("Platform")) 
         {
             if (Vector3.Angle(transform.up, Vector3.up) <= 5f) 
