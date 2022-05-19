@@ -12,7 +12,7 @@ public class Spaceship_Platform_Collision : MonoBehaviour
 
     [SerializeField] private float timeToAddPoint = 2.0f;
 
-    //private const int pointsPerLanding = 5;    
+    private const int pointsPerLandingMultiplayer = 5;    
 
     private float timerToAddPoint = 0f;       
 
@@ -63,13 +63,13 @@ public class Spaceship_Platform_Collision : MonoBehaviour
             if (timerToAddPoint <= 0f) 
             {
                 spaceshipMovement.RestartGameObject();
-                score.ScoreUp(CalculateScoreDependingDistance());
+                score.ScoreUp(CalculateScoreDependingDistance(collision));
             }
         }
     }
 
-    int CalculateScoreDependingDistance() 
+    int CalculateScoreDependingDistance(Collision collision) 
     {
-        return 10;
+        return (int)(Vector3.Distance(collision.transform.position, transform.position) * pointsPerLandingMultiplayer);
     }
 }
