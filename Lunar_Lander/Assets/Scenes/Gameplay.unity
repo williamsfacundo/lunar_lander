@@ -1317,7 +1317,7 @@ PrefabInstance:
       objectReference: {fileID: 1046341708}
     - target: {fileID: 470069971, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: initialFuel
-      value: 90
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 197782851638703530, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: m_Layer

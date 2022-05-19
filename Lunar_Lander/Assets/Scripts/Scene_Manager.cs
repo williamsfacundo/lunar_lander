@@ -5,7 +5,7 @@ public class Scene_Manager : MonoBehaviour
 {
     public static void ChangeToTutorialScene() 
     {
-        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
+        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);        
     }
 
     public static void ChangeToGameScene() 

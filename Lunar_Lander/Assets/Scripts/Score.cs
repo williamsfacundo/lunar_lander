@@ -1,16 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] Text scoreText;
+    [SerializeField] Text scoreText;    
 
-    private int score;
-    
+    private static int score = 0;    
+
     private void Start()
     {
-        score = 0;
-    }
+        if (SceneManager.GetActiveScene().name == "Gameplay") 
+        {
+            score = 0;
+        }        
+    }   
    
     private void Update()
     {
@@ -20,5 +24,5 @@ public class Score : MonoBehaviour
     public void ScoreUp(int _score) 
     {
         score += _score;
-    }
+    }    
 }
