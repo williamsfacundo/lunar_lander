@@ -10,39 +10,18 @@ public class Spaceship_Platform_Collision : MonoBehaviour
 
     [SerializeField] private float maxCollisionVelocity;
 
-    private const int pointsPerLanding = 5;
+    [SerializeField] private float timeToAddPoint = 2.0f;
 
-    //private bool isCollidingWithPlatform;
+    //private const int pointsPerLanding = 5;    
 
-    //private float timerToAddPoint;
-    //private const float timeToAddPoint = 1f;
-
-    /*void Start() 
-    {
-        timerToAddPoint = timeToAddPoint;
-    }
-
-    void Update()
-    {
-        if (isCollidingWithPlatform) 
-        {
-            timerToAddPoint -= Time.deltaTime;
-        }
-
-        if (timerToAddPoint == 0f) 
-        {
-            score.ScoreUp(pointsPerLanding);
-            spaceshipMovement.RestartGameObject();
-        }
-    }*/
+    private float timerToAddPoint = 0f;       
 
     private void OnCollisionEnter(Collision collision)
-    {
+    {        
         InitialPlatformCollison(collision);
 
         NormalPlatformCollision(collision);
     }
-    
 
     private void InitialPlatformCollison(Collision collision) 
     {
@@ -51,15 +30,14 @@ public class Spaceship_Platform_Collision : MonoBehaviour
             SpaceshipFall();
         }
     }
-    
-    private void NormalPlatformCollision(Collision collision) 
+
+    private void NormalPlatformCollision(Collision collision)
     {
         if (collision.transform.CompareTag("Platform"))
         {
             if (collision.relativeVelocity.y < maxCollisionVelocity && Vector3.Angle(transform.up, Vector3.up) <= 5f)
             {
-                score.ScoreUp(pointsPerLanding);
-                spaceshipMovement.RestartGameObject();                
+                timerToAddPoint = timeToAddPoint;
             }
             else
             {
@@ -67,12 +45,31 @@ public class Spaceship_Platform_Collision : MonoBehaviour
             }
         }
     }
-
+    
     private void SpaceshipFall() 
     {
         if (Vector3.Angle(transform.up, Vector3.up) >= angleToResetPosition) //80f
         {
             spaceshipMovement.RestartGameObject();
         }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.transform.CompareTag("Platform")) 
+        {
+            timerToAddPoint -= Time.deltaTime;
+
+            if (timerToAddPoint <= 0f) 
+            {
+                spaceshipMovement.RestartGameObject();
+                score.ScoreUp(CalculateScoreDependingDistance());
+            }
+        }
+    }
+
+    int CalculateScoreDependingDistance() 
+    {
+        return 10;
     }
 }

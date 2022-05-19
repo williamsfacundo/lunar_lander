@@ -393,7 +393,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448252250}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaceship: {fileID: 1886514085}
-  camera_offset: {x: 0, y: -3, z: 10}
+  camera_offset: {x: 0, y: -2, z: 15}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -781,7 +781,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911614515}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1295,6 +1295,14 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1390136996}
+    - target: {fileID: 470069968, guid: 640d6da1244633144b13202da50f62e4, type: 3}
+      propertyPath: timeToAddPoint
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 470069968, guid: 640d6da1244633144b13202da50f62e4, type: 3}
+      propertyPath: maxCollisionVelocity
+      value: 2.6
+      objectReference: {fileID: 0}
     - target: {fileID: 470069969, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: initial_platform
       value: 
@@ -1307,6 +1315,10 @@ PrefabInstance:
       propertyPath: fuelText
       value: 
       objectReference: {fileID: 1046341708}
+    - target: {fileID: 470069971, guid: 640d6da1244633144b13202da50f62e4, type: 3}
+      propertyPath: initialFuel
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 197782851638703530, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -2040,7 +2052,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668774811}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
