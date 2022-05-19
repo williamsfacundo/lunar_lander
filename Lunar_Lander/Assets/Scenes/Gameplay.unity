@@ -1301,7 +1301,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 470069968, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: maxCollisionVelocity
-      value: 2.6
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 470069968, guid: 640d6da1244633144b13202da50f62e4, type: 3}
+      propertyPath: maxCollisionVelocity.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 470069968, guid: 640d6da1244633144b13202da50f62e4, type: 3}
+      propertyPath: maxCollisionVelocity.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 470069968, guid: 640d6da1244633144b13202da50f62e4, type: 3}
+      propertyPath: maxCollisionVelocity.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 470069969, guid: 640d6da1244633144b13202da50f62e4, type: 3}
       propertyPath: initial_platform

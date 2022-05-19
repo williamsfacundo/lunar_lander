@@ -35,7 +35,7 @@ public class Spaceship_Platform_Collision : MonoBehaviour
     {
         if (collision.transform.CompareTag("Platform"))
         {
-            if (collision.relativeVelocity.y < maxCollisionVelocity)
+            if (CorrectVelocity(collision))
             {
                 timerToAddPoint = timeToAddPoint;
             }
@@ -44,6 +44,18 @@ public class Spaceship_Platform_Collision : MonoBehaviour
                 spaceshipMovement.RestartGameObject();
             }
         }
+    }
+
+    private bool CorrectVelocity(Collision collision) 
+    {
+        if (collision.relativeVelocity.y > 0f) 
+        {
+            return collision.relativeVelocity.y < maxCollisionVelocity;
+        }
+        else 
+        {
+            return collision.relativeVelocity.y > -maxCollisionVelocity;
+        }        
     }
     
     private void SpaceshipFall() 
