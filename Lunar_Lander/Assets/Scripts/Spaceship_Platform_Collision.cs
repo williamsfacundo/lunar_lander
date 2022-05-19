@@ -35,7 +35,7 @@ public class Spaceship_Platform_Collision : MonoBehaviour
     {
         if (collision.transform.CompareTag("Platform"))
         {
-            if (collision.relativeVelocity.y < maxCollisionVelocity && Vector3.Angle(transform.up, Vector3.up) <= 5f)
+            if (collision.relativeVelocity.y < maxCollisionVelocity)
             {
                 timerToAddPoint = timeToAddPoint;
             }
@@ -58,13 +58,23 @@ public class Spaceship_Platform_Collision : MonoBehaviour
     {
         if (collision.transform.CompareTag("Platform")) 
         {
-            timerToAddPoint -= Time.deltaTime;
-
-            if (timerToAddPoint <= 0f) 
+            if (Vector3.Angle(transform.up, Vector3.up) <= 5f) 
             {
-                spaceshipMovement.RestartGameObject();
-                score.ScoreUp(CalculateScoreDependingDistance(collision));
+                timerToAddPoint -= Time.deltaTime;
+
+                if (timerToAddPoint <= 0f)
+                {
+                    spaceshipMovement.RestartGameObject();
+                    score.ScoreUp(CalculateScoreDependingDistance(collision));
+                }
             }
+            else 
+            {
+                if (timerToAddPoint != timeToAddPoint) 
+                {
+                    timerToAddPoint = timeToAddPoint;
+                }
+            }            
         }
     }
 
